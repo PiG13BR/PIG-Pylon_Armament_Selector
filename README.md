@@ -15,3 +15,5 @@ This framework is a custom pylon armament selector for aircrafts with 3D camera 
 ## HOW TO INSTALL
 - Download the content.
 - Copy and everything inside `Missionframework` and paste in your mission folder.
+
+<img width="800" height="450" alt="2026-06-2219-05-14-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/82b10520-995e-4753-9dce-d944ff359605" />
