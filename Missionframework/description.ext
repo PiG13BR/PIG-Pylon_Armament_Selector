@@ -1,0 +1,12 @@
+#include "PAS\ui\RscPASMenu.hpp"
+#include "PAS\cfgEventHandlers.hpp"
+
+class CfgFunctions
+{
+	class PIG
+	{
+		#include "PAS\cfgFunctions.hpp"
+	}
+};
+
+enableDebugConsole = 1;
