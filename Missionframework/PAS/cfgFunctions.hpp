@@ -40,6 +40,7 @@ class Camera_Freelook
 {
     file = "PAS\camera";
     
+    class handleKeyDown {};
     class handleMouse {};
     class handleScrollWheel {};
     class loadCameraHandle {};

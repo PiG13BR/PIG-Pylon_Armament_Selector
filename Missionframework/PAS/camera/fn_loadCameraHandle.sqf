@@ -5,7 +5,7 @@
     Author: Alganthe, johnb43
     Adaptation made by PiG13BR for Air Spawner Menu
     Date: 14/10/2025
-    Update Date: 16/10/2025
+    Update Date: 06/07/2026
     
     Description:
         Loads camera display
@@ -53,6 +53,10 @@ PIG_PAS_camera camPrepareFocus [-1, -1];
 PIG_PAS_camera camPrepareFov 0.35;
 PIG_PAS_camera camCommitPrepared 0;
 cameraEffectEnableHUD true;
+
+if (currentVisionMode player == 1) then {
+    player action ["NVGogglesOff", player];
+};
 
 showCinemaBorder false;
 ["#(argb,8,8,3)color(0,0,0,1)", false, nil, 0, [0, 0.5]] call BIS_fnc_textTiles;
