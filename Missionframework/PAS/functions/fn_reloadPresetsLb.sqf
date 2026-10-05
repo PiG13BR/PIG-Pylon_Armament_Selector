@@ -2,7 +2,7 @@
 	File: fn_reloadPresetsLb.sqf
 	Author: PiG13BR - https://github.com/PiG13BR
 	Date: 14/10/2025
-	Last Update: 22/06/2026
+	Last Update: 05/10/2026
 	License: MIT License - http://www.opensource.org/licenses/MIT
 
 	Description:
@@ -26,6 +26,7 @@ lbClear _control; // Clear the list box
 // Get cfg preset for this aircraft
 private _presetCfgPaths = configProperties [ConfigOf _aircraft >> "Components" >> "TransportPylonsComponent" >> "Presets", "isClass _x"];
 if (isNil "PIG_PAS_cfgPresets") then {PIG_PAS_cfgPresets = createHashMap};
+private _count = count (getAllPylonsInfo _aircraft); // Get a pylon count
 
 {
     private _presetName = (getText(_x >> "displayName"));
@@ -34,12 +35,14 @@ if (isNil "PIG_PAS_cfgPresets") then {PIG_PAS_cfgPresets = createHashMap};
     private _attachs = (getArray(_x >> "attachment"));
 	if (count _attachs < 1) then {
 		// Empty preset
-		if ((tolowerANSI _presetName) in PIG_PAS_cfgPresets) then {
-			private _preset = (PIG_PAS_cfgPresets get (tolowerANSI _presetName));
-			_preset pushBack [];
-			PIG_PAS_cfgPresets set [tolowerANSI _presetName, _preset];
-		} else {
-			PIG_PAS_cfgPresets set [tolowerANSI _presetName, []];
+		for "_i" from 1 to _count do {
+			if ((tolowerANSI _presetName) in PIG_PAS_cfgPresets) then {
+				private _preset = (PIG_PAS_cfgPresets get (tolowerANSI _presetName));
+				_preset pushBack ["", [-1]];
+				PIG_PAS_cfgPresets set [tolowerANSI _presetName, _preset];
+			} else {
+				PIG_PAS_cfgPresets set [tolowerANSI _presetName, []];
+			};
 		};
 	} else {
 		{
