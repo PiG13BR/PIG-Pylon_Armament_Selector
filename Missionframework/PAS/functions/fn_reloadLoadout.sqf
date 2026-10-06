@@ -9,13 +9,14 @@
 		Reloads aircraft's loadout variable
 
 	Parameter(s):
-		-
+		_aircraft - aircraft to reset loadout variable [OBJECT]
 	
 	Returns:
 		-
 */
+params["_aircraft"];
 
-_originalCount = count PIG_PAS_airLoadout;
+private _originalCount = count(getAllPylonsInfo _aircraft);
 PIG_PAS_airLoadout = [];
 
 for "_i" from 1 to _originalCount do {

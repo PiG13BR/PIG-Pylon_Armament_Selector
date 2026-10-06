@@ -10,7 +10,7 @@
 
 	Parameter(s):
 		_vehicle - vehicle to check pylons pos [OBJECT]
-		_pylon - pylon name [STRING]
+		_pylon - pylon number [NUMBER]
 	
 	Returns:
 		Pylon turret [ARRAY]
